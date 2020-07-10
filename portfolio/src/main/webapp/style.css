@@ -37,9 +37,6 @@ body{
     font-size: 25px;
 }
 
-/* #name{
-    font-family: Georgia, 'Times New Roman', Times, serif; 
-} */
 
 #education{
     width: 800px;
@@ -59,6 +56,11 @@ body{
     margin-right:10%;
 }
 
+#projects{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .techskill{
     width: 75px;
 }
@@ -71,4 +73,13 @@ body{
   margin-top: 50px;
 }
 
+td div{
+    display: none;
+}
+img:hover + div{
+    display: block;
+}
+.myskill{
+    text-align: center;
+}
 

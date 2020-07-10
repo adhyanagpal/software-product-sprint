@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Adhya Nagpal</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
       <h1 id="name">Adhya Nagpal</h1>
       <br>
-      <img src="../public/AdhyaNagpal.png" width="300" height="300">
-      <!-- <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button> -->
+      <img src="../public/AdhyaNagpal.jpg" width="400" >
       <div id="greeting-container"></div>
     </div>
 
     <div id="intro">
-        <p>Hey there! I'm Adhya. I was born and brought up in Delhi. I'm a coding enthusiast and love to read fiction, play badminton and listen to music in my free time. I've participated in a couple of hackathons like HackIIITD'19 and UHack 4.0 and some open source events like Hacktoberfest'19.</p>
+        <p>Hey there! I'm Adhya. I was born and brought up in Delhi. 
+            Currently, I'm a third year Computer Engineering student at Netaji Subhas University of Technology.  
+            I'm a coding enthusiast and love to read fiction, 
+            play badminton and listen to music in my free time. 
+            I've participated in a couple of hackathons like HackIIITD'19 and UHack 4.0
+            (our team stood second in this)
+            and some open source events like Hacktoberfest'19.</p>
         <table id="profile-table" cellpadding="15">
             <tr>
             <td> Some of my Profile Links:  </td>
-            <td><a href="https://www.codechef.com/users/adh001"> <img src="../public/codechef.png" width="173" > </a></td>
-            <td><a href="https://github.com/adhyanagpal"> <img src="../public/GitHub.png" width="70"> </a></td> 
+            <td><a href="https://www.codechef.com/users/adh001" target="_blank"> <img src="../public/codechef.png" width="173" > </a></td>
+            <td><a href="https://github.com/adhyanagpal" target="_blank"> <img src="../public/GitHub.png" width="70"> </a></td> 
             </tr> 
         </table>
     </div>
@@ -86,23 +89,76 @@
         <h2>My Technical Skills:</h2>
         <table cellpadding="10">
             <tr>
-                <td> <img src="../public/c.png" class="techskill"> </td>
-                <td> <img src="../public/cpp.png" class="techskill"> </td>
-                <td> <img src="../public/java.png" class="techskill"> </td>
-                <td> <img src="../public/python.jpeg" class="techskill"> </td>
-                <td> <img src="../public/js.jpg" class="techskill"> </td>
-                <td> <img src="../public/nodejs.png" class="techskill"> </td>
-                <td> <img src="../public/express.png" width="200"> </td>
-                <td> <img src="../public/htmlcss.png" class="techskill2"> </td>
-                <td> <img src="../public/mongo.png" width="150"> </td>
-                <td> <img src="../public/mysql.svg" class="techskill2"> </td>
-                <td> <img src="../public/passport.png" class="techskill2"> </td>
-                <td> <img src="../public/bootstrap.png" class="techskill2"> </td>
+                <td>
+                    <img src="../public/c.png" class="techskill">
+                    <div class="myskill"> C </div>
+                </td>
+                <td> 
+                    <img src="../public/cpp.png" width="65"> 
+                    <div class="myskill"> C++ </div>
+                </td>
+                <td> 
+                    <img src="../public/java.png" class="techskill"> 
+                    <div class="myskill"> Java </div>
+                </td>
+                <td> 
+                    <img src="../public/python.jpeg" class="techskill">
+                    <div class="myskill"> Python </div>
+                </td>
+                <td> 
+                    <img src="../public/js.jpg" class="techskill"> 
+                    <div class="myskill"> JavaScript </div>
+                </td>
+                <td> 
+                    <img src="../public/nodejs.png" class="techskill">
+                    <div class="myskill"> Node.js </div>
+                </td>
+                <td>
+                    <img src="../public/express.png" width="200"> 
+                    <div class="myskill"> Express.js </div>
+                </td>
+                <td> 
+                    <img src="../public/htmlcss.png" class="techskill2"> 
+                    <div class="myskill"> HTML CSS </div>
+                </td>
+                <td> 
+                    <img src="../public/mongo.png" width="150"> 
+                    <div class="myskill"> MongoDB </div>
+                </td>
+                <td> 
+                    <img src="../public/mysql.svg" class="techskill2"> 
+                    <div class="myskill"> MySQL </div>
+                </td>
+                <td> 
+                    <img src="../public/passport.png" class="techskill2"> 
+                    <div class="myskill"> PassportJS </div>
+                </td>
+                <td> 
+                    <img src="../public/bootstrap.png" class="techskill2"> 
+                    <div class="myskill"> Bootstrap </div>
+                </td>
             
             </tr>
 
 
         </table>
+    </div>
+
+    <br>
+
+    <div id="projects">
+        <h2> My Projects:</h2>
+        <ul>
+            <li > <b>E-Shopping Website </b>
+                <button onclick="getdescription(1)" type="button" class="btn btn-secondary"> View Details</button>
+                <ul type="none" id="p1"></ul>
+            </li>
+            <br>
+            <li > <b>Library Management System</b>
+                <button onclick="getdescription(2)" type="button" class="btn btn-secondary"> View Details </button>
+                <ul type="none" id="p2"></ul>
+            </li>
+        </ul> 
     </div>
 
     <br>
@@ -140,7 +196,9 @@
         <table cellpadding="5">
         <tr>
         <td> Contact Me: </td>
-        <td><a href="https://www.linkedin.com/in/adhya-nagpal-5648a9194/"> <img src="../public/linkedin.png" width="70" height="70"> </a></td>
+        <td><a href="https://www.linkedin.com/in/adhya-nagpal-5648a9194/" target="_blank"> 
+            <img src="../public/linkedin.png" width="70" height="70"> 
+        </a></td>
 
         <td><a href="tel:+919999409860"> <img src="../public/phone.jpg" width="62" height="47"> </a></td>
 
@@ -150,5 +208,7 @@
         </table>
     </div>
 
-  </body>
+    <script src="script.js"></script>
+    
+   </body>
 </html>

@@ -12,17 +12,36 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+const descriptions=[
+    "A Node.js project that uses Handlebars as templating engine,"+
+    " Sequelize as ORM and PassportJS for user authentication",
+
+
+    "A mini-project built on the concepts of Database Management Systems, "+
+    "using PHP and MySQL. My Role in the Project: Entity-Relationship model designing,"+
+    "Schema designing, setting up database constraints and implementing triggers."
+]
+
+const links=[
+    "https://github.com/adhyanagpal/E-ShoppingProject",
+    "https://github.com/adhyanagpal/LIB"
+]
+
+function getdescription( btnid ){
+    let listid= "p"+btnid;
+    let listitem=document.getElementById(listid);
+
+    console.log("innerhtml: "+listitem.innerHTML)
+
+    if(listitem.innerHTML!=""){
+        listitem.innerHTML="";
+    }
+    else{
+        listitem.innerHTML="<br> <li>"+ descriptions[parseInt(btnid)-1] +"</li>"+
+                        "<br> <li> <a href="+links[parseInt(btnid)-1] + " target='_blank'> View on GitHub </a> </li>"
+
+    }
+    
 }
