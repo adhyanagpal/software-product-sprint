@@ -4,30 +4,34 @@ body{
 }
 
 #contact{
-  margin-top: 10%;
-  margin-left: 40%;
-  margin-bottom: 50px;
-  margin-right: auto;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   text-align: center;
-   width: 650px; 
+   
 }
 
 #content{
-  margin-left: 550px;
-  margin-top: 50px;
-  margin-right: auto;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 25px;
-  width: 800px;
+}
+
+#myname{
+    text-align: center;
 }
 
 #intro{
-    /* width: 1600px; */
     margin-left: 10%;
     margin-right:10%;
-    /* text-align: left; */
+    justify-content: left;
+    
     font-size: 25px;
 }
 
@@ -39,21 +43,25 @@ body{
 
 
 #education{
-    width: 800px;
     margin-left: 10%;
     font-size: 25px;
 }
 
 #cc{
-    width: 800px;
     margin-left: 10%;
 }
 
+#skillsdiv{
+    margin-left: 10%;
+}
 
 #skills{
-    width: 800px;
     margin-left: 10%;
     margin-right:10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #projects{
@@ -73,7 +81,12 @@ body{
   margin-top: 50px;
 }
 
-td div{
+.sk{
+    padding: 10px;
+    margin: 10px;
+}
+
+div div div div{
     display: none;
 }
 img:hover + div{
