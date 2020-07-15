@@ -4,7 +4,7 @@ body{
 }
 
 #contact{
-  
+  margin-top: 10%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -14,7 +14,6 @@ body{
 }
 
 #content{
-  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -30,6 +29,7 @@ body{
 #intro{
     margin-left: 10%;
     margin-right:10%;
+    margin-top: 5%;
     justify-content: left;
     
     font-size: 25px;
@@ -56,7 +56,7 @@ body{
 }
 
 #skills{
-    margin-left: 10%;
+    /* margin-left: 10%; */
     margin-right:10%;
     display: flex;
     flex-wrap: wrap;
@@ -94,5 +94,9 @@ img:hover + div{
 }
 .myskill{
     text-align: center;
+}
+
+#comments{
+    margin-left:10%;
 }
 
