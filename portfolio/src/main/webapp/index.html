@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div id="myname">
+        <h1 id="name">Adhya Nagpal</h1>
+    </div>
+
+    <br>
+
     <div id="content">
-      <h1 id="name">Adhya Nagpal</h1>
-      <br>
       <img src="../public/AdhyaNagpal.jpg" width="400" >
-      <div id="greeting-container"></div>
     </div>
 
     <div id="intro">
-        <p>Hey there! I'm Adhya. I was born and brought up in Delhi. 
+        <p id="aboutme">Hey there! I'm Adhya. I was born and brought up in Delhi. 
             Currently, I'm a third year Computer Engineering student at Netaji Subhas University of Technology.  
             I'm a coding enthusiast and love to read fiction, 
             play badminton and listen to music in my free time. 
@@ -85,65 +88,61 @@
 
     <br>
 
-    <div id="skills">
-        <h2>My Technical Skills:</h2>
-        <table cellpadding="10">
-            <tr>
-                <td>
+    <div id="skillsdiv">
+            <h2>My Technical Skills:</h2>
+            <div id="skills">
+        
+                <div class="sk">
                     <img src="../public/c.png" class="techskill">
                     <div class="myskill"> C </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/cpp.png" width="65"> 
                     <div class="myskill"> C++ </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/java.png" class="techskill"> 
                     <div class="myskill"> Java </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/python.jpeg" class="techskill">
                     <div class="myskill"> Python </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/js.jpg" class="techskill"> 
                     <div class="myskill"> JavaScript </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/nodejs.png" class="techskill">
                     <div class="myskill"> Node.js </div>
-                </td>
-                <td>
+                </div>
+                <div class="sk">
                     <img src="../public/express.png" width="200"> 
                     <div class="myskill"> Express.js </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/htmlcss.png" class="techskill2"> 
                     <div class="myskill"> HTML CSS </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/mongo.png" width="150"> 
                     <div class="myskill"> MongoDB </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/mysql.svg" class="techskill2"> 
                     <div class="myskill"> MySQL </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/passport.png" class="techskill2"> 
                     <div class="myskill"> PassportJS </div>
-                </td>
-                <td> 
+                </div>
+                <div class="sk"> 
                     <img src="../public/bootstrap.png" class="techskill2"> 
                     <div class="myskill"> Bootstrap </div>
-                </td>
-            
-            </tr>
+                </div>
 
-
-        </table>
+            </div>
     </div>
-
     <br>
 
     <div id="projects">
@@ -189,7 +188,12 @@
         </table>
     </div>
 
+    <br>
 
+    <div id="comments">
+        <button onclick="displaycomments()"> ClickHere </button>
+        <ul id="commentslist"></ul>
+    </div>
 
 
     <div id="contact">

@@ -45,3 +45,22 @@ function getdescription( btnid ){
     }
     
 }
+
+
+
+const displaycomments = ()=>{
+    fetch('/data')
+        .then(response=> response.text() )
+        .then(message => {
+            paint(message)
+        })
+}
+
+const paint= (message) => {
+    const html=render(message);
+    document.getElementById('commentslist').innerHTML+=html;
+}
+
+const render=(message)=>{
+    return '<li>'+message+ '</li>'
+}
