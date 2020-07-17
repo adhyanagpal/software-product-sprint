@@ -100,3 +100,13 @@ img:hover + div{
     margin-left:10%;
 }
 
+.btn{
+    font-size: 20px;
+    width: 150px;
+}
+
+.textbox{
+    font-size: 22px;
+    width: 400px;
+}
+
