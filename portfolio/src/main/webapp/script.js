@@ -46,21 +46,26 @@ function getdescription( btnid ){
     
 }
 
-
-
 const displaycomments = ()=>{
     fetch('/data')
-        .then(response=> response.text() )
-        .then(message => {
-            paint(message)
+        .then(response=> response.json() )
+        .then(messages => {
+            paint(messages)
         })
 }
 
-const paint= (message) => {
-    const html=render(message);
+const paint= (messages) => {
+    const html=render(messages);
     document.getElementById('commentslist').innerHTML+=html;
 }
 
-const render=(message)=>{
-    return '<li>'+message+ '</li>'
+
+const render = (messages) => {
+    return messages.reduce((acc, msg, index) => {
+        const namestring= msg.name=="" ? "  ~Anonymous" : `  ~ ${msg.name}`
+        return acc + `<li data-index="${index}" > "${msg.comment}"  ${namestring} </li>`
+                
+    }, '')
 }
+
+displaycomments();
