@@ -50,22 +50,56 @@ const displaycomments = ()=>{
     fetch('/data')
         .then(response=> response.json() )
         .then(messages => {
-            paint(messages)
+            const commentslist=document.getElementById('commentslist');
+            messages.forEach((msg) => {
+                commentslist.appendChild(createComElement(msg));
+            })
+            // paint(messages)
         })
+
+        
 }
 
-const paint= (messages) => {
-    const html=render(messages);
-    document.getElementById('commentslist').innerHTML+=html;
+const createComElement=(msg)=>{
+    const com=document.createElement('li');
+    const celement=document.createElement('span');
+    celement.innerText=msg.comment;
+    const namestring= msg.name=="" ? "  ~Anonymous" : `  ~ ${msg.name}`
+    celement.innerText+=namestring;
+    const deleteButtonElement = document.createElement('button');
+    deleteButtonElement.innerText = 'Delete';
+    deleteButtonElement.addEventListener('click', () => {
+        deleteComment(msg);
+        com.remove();
+    })
+
+    com.appendChild(celement);
+    com.appendChild(deleteButtonElement);
+    return com;
+
+}
+
+function deleteComment(msg) {
+  const params = new URLSearchParams();
+  params.append('id', msg.id);
+  fetch('/delete', 
+    {method: 'POST', body: params}
+  );
 }
 
 
-const render = (messages) => {
-    return messages.reduce((acc, msg, index) => {
-        const namestring= msg.name=="" ? "  ~Anonymous" : `  ~ ${msg.name}`
-        return acc + `<li data-index="${index}" > "${msg.comment}"  ${namestring} </li>`
+// const paint= (messages) => {
+//     const html=render(messages);
+//     document.getElementById('commentslist').innerHTML+=html;
+// }
+
+
+// const render = (messages) => {
+//     return messages.reduce((acc, msg, index) => {
+//         const namestring= msg.name=="" ? "  ~Anonymous" : `  ~ ${msg.name}`
+//         return acc + `<li data-index="${index}" > "${msg.comment}"  ${namestring}  <button id=> Delete </button> </li>` 
                 
-    }, '')
-}
+//     }, '')
+// }
 
 displaycomments();
