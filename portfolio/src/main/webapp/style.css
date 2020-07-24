@@ -1,5 +1,5 @@
 body{
-    font-size: 25px;
+    font-size: 23px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -19,7 +19,7 @@ body{
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 25px;
+  /* font-size: 25px; */
 }
 
 #myname{
@@ -31,20 +31,26 @@ body{
     margin-right:10%;
     margin-top: 5%;
     justify-content: left;
-    
-    font-size: 25px;
+
 }
 
-#profile-table{
+#profiles{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
     align-items: center;
-    text-align: center;
-    font-size: 25px;
+}
+
+.prof{
+    /* padding: 10%; */
+    margin-left:3%;
 }
 
 
 #education{
     margin-left: 10%;
-    font-size: 25px;
+    /* font-size: 25px; */
 }
 
 #cc{
@@ -107,6 +113,6 @@ img:hover + div{
 
 .textbox{
     font-size: 22px;
-    width: 400px;
+    width: 300px; 
 }
 
