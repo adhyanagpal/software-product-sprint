@@ -192,21 +192,26 @@
 
     <div id="comments">
         <h2>Any Comments?</h2>
-        <form method="POST" action="/data">
-            <label>Your Comment:</label>
+            <form method="POST" action="/data" id="comments-form">
+                <label>Your Comment:</label>
+                <br>
+                <input type="text" placeholder="Enter the comment here" name="com" class="textbox">
+                <br>
+                <br>
+                <label>Your Name:</label>
+                <br>
+                <input type="text" placeholder="Name" name="name" class="textbox"> 
+                <br>
+                <br>
+                <button onclick="displaycomments()" class="btn"> Add </button>
+            </form>
+            <div id='login'> 
+            </div>
             <br>
-            <input type="text" placeholder="Enter the comment here" name="com" class="textbox">
-            <br>
-            <br>
-            <label>Your Name:</label>
-            <br>
-            <input type="text" placeholder="Name" name="name" class="textbox"> 
-            <br>
-            <br>
-            <button onclick="displaycomments()" class="btn"> Add </button>
-        </form>
+            <div id='logout'>
+            </div> 
         <h4>All Comments:</h4>
-        <ul id="commentslist" type="none"></ul>
+        <ul id="commentslist"></ul>
     </div>
 
 

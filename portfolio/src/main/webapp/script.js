@@ -13,7 +13,6 @@
 // limitations under the License.
 
 
-
 const descriptions=[
     "A Node.js project that uses Handlebars as templating engine,"+
     " Sequelize as ORM and PassportJS for user authentication",
@@ -54,7 +53,7 @@ const displaycomments = ()=>{
             messages.forEach((msg) => {
                 commentslist.appendChild(createComElement(msg));
             })
-            // paint(messages)
+            
         })
 
         
@@ -63,14 +62,37 @@ const displaycomments = ()=>{
 const createComElement=(msg)=>{
     const com=document.createElement('li');
     const celement=document.createElement('span');
-    celement.innerText=msg.comment;
-    const namestring= msg.name=="" ? "  ~Anonymous" : `  ~ ${msg.name}`
-    celement.innerText+=namestring;
+    //celement.innerText=msg.comment;
+    let namestring= msg.name=="" ? "Anonymous" :  msg.name;
+    namestring+=" ( "+msg.email+" ) ";
+    celement.innerText+=namestring+": "+msg.comment;
     const deleteButtonElement = document.createElement('button');
     deleteButtonElement.innerText = 'Delete';
     deleteButtonElement.addEventListener('click', () => {
-        deleteComment(msg);
-        com.remove();
+        
+        fetch('/curuserid')
+            .then(response=> response.text())
+            .then(userid=>{
+                // console.log("current user's id: "+userid);
+                // console.log("comment's author's id: "+msg.userid);
+                // console.log(typeof(userid));
+                // console.log(typeof(msg.userid));
+                // console.log(userid.trim().valueOf()===msg.userid.trim().valueOf());
+                if(userid.trim().valueOf()===""){
+                    window.alert("You need to be logged in to be able to delete comments");
+                }
+                else if(userid.trim().valueOf()===msg.userid.trim().valueOf()){
+                    deleteComment(msg);
+                    com.remove();
+                }
+                else{
+                    window.alert("You can't delete someone else's comments");
+                }
+            })
+            
+
+            // deleteComment(msg);
+            // com.remove();
     })
 
     com.appendChild(celement);
@@ -86,20 +108,31 @@ function deleteComment(msg) {
     {method: 'POST', body: params}
   );
 }
+const commentsFormDisplay=()=>{
+    fetch('/isloggedin')
+        .then(response=>response.json())
+        .then(loginStatus=>{
 
+            //console.log("return value from login= "+ loginStatus);
 
-// const paint= (messages) => {
-//     const html=render(messages);
-//     document.getElementById('commentslist').innerHTML+=html;
-// }
+            let commentsForm=document.getElementById('comments-form');
+            let logindiv=document.getElementById('login');
+            let logoutdiv=document.getElementById('logout');
 
-
-// const render = (messages) => {
-//     return messages.reduce((acc, msg, index) => {
-//         const namestring= msg.name=="" ? "  ~Anonymous" : `  ~ ${msg.name}`
-//         return acc + `<li data-index="${index}" > "${msg.comment}"  ${namestring}  <button id=> Delete </button> </li>` 
+            if(loginStatus.isloggedin===true){
+                logoutdiv.innerHTML="<a href=\""+loginStatus.url+"\"> Logout </a>";
+                logindiv.hidden=true;
+            }
+            else{
+                commentsForm.hidden=true;
+                logoutdiv.hidden=true;
+                logindiv.innerHTML="<a href=\""+loginStatus.url+"\"> Login Here to Add or Delete Comments </a>";
                 
-//     }, '')
-// }
+            }
+        })
+}
+
 
 displaycomments();
+
+commentsFormDisplay()
