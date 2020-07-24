@@ -73,11 +73,11 @@ const createComElement=(msg)=>{
         fetch('/curuserid')
             .then(response=> response.text())
             .then(userid=>{
-                console.log("current user's id: "+userid);
-                console.log("comment's author's id: "+msg.userid);
-                console.log(typeof(userid));
-                console.log(typeof(msg.userid));
-                console.log(userid.trim().valueOf()===msg.userid.trim().valueOf());
+                // console.log("current user's id: "+userid);
+                // console.log("comment's author's id: "+msg.userid);
+                // console.log(typeof(userid));
+                // console.log(typeof(msg.userid));
+                // console.log(userid.trim().valueOf()===msg.userid.trim().valueOf());
                 if(userid.trim().valueOf()===""){
                     window.alert("You need to be logged in to be able to delete comments");
                 }
@@ -113,7 +113,7 @@ const commentsFormDisplay=()=>{
         .then(response=>response.json())
         .then(loginStatus=>{
 
-            console.log("return value from login= "+ loginStatus);
+            //console.log("return value from login= "+ loginStatus);
 
             let commentsForm=document.getElementById('comments-form');
             let logindiv=document.getElementById('login');
